@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div className="page" ref={ref}>
+        <div {...props} className="page" ref={ref}>
             <div className="bg-custom-image bg-cover bg-center h-screen flex flex-col items-center justify-center px-4">
                 <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-screen-xl">
 
