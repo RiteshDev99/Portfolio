@@ -42,7 +42,7 @@ const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
                     </div>
 
                     <div className="flex items-center justify-center lg:w-1/2 mt-8 lg:mt-0">
-                        <div className="rounded-full overflow-hidden w-48 h-48 lg:w-80 lg:h-80 bg-blue-500 flex items-center justify-center ml-[10vw]">
+                        <div className="rounded-full overflow-hidden w-48 h-48 lg:w-80 lg:h-80 bg-gray-800 flex items-center justify-center ml-[10vw]">
                             <img src="pic.jpeg" alt="Profile" className="object-cover w-full h-full" />
                         </div>
                     </div>
