@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 
 const Education = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div {...props} className="min-h-screen bg-black" ref={ref}>
+        <div {...props} className="min-h-screen bg-zinc-900" ref={ref}>
             <div className="text-white flex justify-center items-center py-36 text-3xl tracking-[18px] h-32">
                 <h1>EDUCATION</h1>
             </div>

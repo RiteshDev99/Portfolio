@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div {...props} className="page bg-black" ref={ref}>
+        <div {...props} className="page bg-zinc-950" ref={ref}>
             <div className="bg-custom-image bg-cover bg-center h-screen flex flex-col items-center justify-center px-4">
                 <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-screen-xl">
 
@@ -22,7 +22,9 @@ const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
                         <p className="text-lg lg:text-xl text-white mb-4">
                             I Am Into <span className="text-blue-400">Web Development</span>
                         </p>
-                        <button className="px-8 py-3 rounded-3xl bg-blue-500 text-white hover:bg-blue-600 transition mb-6 lg:mb-0">
+                        <button onClick={() => {
+                            window.open("https://linktr.ee/riteshdev99");
+                        }} className="px-8 py-3 rounded-3xl bg-blue-500 text-white hover:bg-blue-600 transition mb-6 lg:mb-0">
                             About Me
                         </button>
                         <div className="flex justify-center lg:justify-start gap-4 flex-wrap mt-5">

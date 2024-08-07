@@ -3,7 +3,7 @@ import SkillsIcon from "./skillsIcon";
 
 const Skill = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div {...props} ref={ref} className="min-h-screen bg-black flex items-center justify-center py-16 px-4">
+        <div {...props} ref={ref} className="min-h-screen bg-zinc-900 flex items-center justify-center py-16 px-4">
 
             <div className="flex flex-col items-center justify-between min-h-[50vh]">
 
