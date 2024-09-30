@@ -69,7 +69,7 @@ const Education = React.forwardRef<HTMLDivElement>((props, ref) => {
                 >
                     I am currently pursuing a Bachelor of Technology (B.Tech) in Computer Science
                     <br />
-                    from Veer Bahadur Singh Purvanchal University, Jaunpur.
+                    from UNSIET Jaunpur.
                 </motion.p>
             </motion.div>
         </div>
