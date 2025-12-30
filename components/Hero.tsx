@@ -43,13 +43,13 @@ const Hero: React.FC = () => {
             <div className="flex flex-wrap gap-3 mt-3">
               <a 
                 href="#contact" 
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium hover:opacity-95 transition-opacity shadow-lg shadow-primary/20 text-sm sm:text-base animate-pop"
+                className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium hover:opacity-95 transition-opacity shadow-lg shadow-primary/20 text-sm sm:text-base animate-pop"
               >
                 Hire Me
               </a>
               <a 
                 href="#projects" 
-                className="px-6 py-3 rounded-full bg-transparent border border-white/20 text-white font-medium hover:bg-white/5 transition-colors text-sm sm:text-base"
+                className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-transparent border border-white/20 text-white font-medium hover:bg-white/5 transition-colors text-sm sm:text-base"
               >
                 View Projects
               </a>

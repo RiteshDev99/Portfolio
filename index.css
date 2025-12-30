@@ -1,0 +1,25 @@
+/* Minimal base styles and responsive helpers used by the app (keeps mobile safe-area padding and base body sizing) */
+:root {
+  --safe-x: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-left: calc(1rem + var(--safe-x));
+  padding-right: calc(1rem + var(--safe-right));
+}
+
+/* Improve responsiveness for images */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Utility to center content on small screens */
+@media (max-width: 640px) {
+  .container-sm { padding-left: 1rem; padding-right: 1rem; }
+}
+

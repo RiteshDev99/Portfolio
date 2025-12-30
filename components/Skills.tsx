@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[140px] md:auto-rows-[160px] lg:auto-rows-[180px]">
           {SKILLS.map((skill, index) => {
             const isWide = index === 0 || index === 3;
             const isTall = index === 2;
@@ -27,7 +27,8 @@ const Skills: React.FC = () => {
             return (
               <div 
                 key={skill.name} 
-                className={`glass-card p-6 rounded-2xl hover:border-primary/50 transition-all group relative overflow-hidden flex flex-col justify-between ${gridClass}`}
+                className={`glass-card p-4 sm:p-6 rounded-2xl hover:border-primary/50 transition-all group relative overflow-hidden flex flex-col justify-between ${gridClass}`}
+                style={{ minHeight: 0 }}
               >
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <skill.icon size={isWide ? 80 : 40} />
@@ -37,8 +38,8 @@ const Skills: React.FC = () => {
                   <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
                     <skill.icon size={20} />
                   </div>
-                  <h3 className="text-xl font-bold mb-1 text-white">{skill.name}</h3>
-                  <p className="text-sm text-text-secondary">{skill.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-1 text-white">{skill.name}</h3>
+                  <p className="text-sm sm:text-sm text-text-secondary">{skill.description}</p>
                 </div>
                 
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
