@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight, Code2, Database, Cpu } from 'lucide-react';
+import { Code2, Database } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
+import AnimatedOrb from './ui/AnimatedOrb';
 
 const Hero: React.FC = () => {
   return (
@@ -9,8 +10,12 @@ const Hero: React.FC = () => {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 bg-[length:400%_400%] animate-gradient-slow -z-20" />
 
       {/* Background Decor */}
-      <div aria-hidden className="absolute top-0 right-0 w-[420px] h-[420px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse-slow opacity-80 hidden md:block" />
-      <div aria-hidden className="absolute bottom-0 left-0 w-[320px] h-[320px] bg-accent/20 rounded-full blur-[100px] -z-10 opacity-90 hidden md:block" />
+      <div aria-hidden className="absolute top-0 right-0 w-[420px] h-[420px] -z-10 animate-pulse-slow opacity-80 hidden md:block">
+        <AnimatedOrb className="w-full h-full" />
+      </div>
+      <div aria-hidden className="absolute bottom-0 left-0 w-[320px] h-[320px] -z-10 opacity-90 hidden md:block">
+        <AnimatedOrb className="w-full h-full" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left Content */}
@@ -38,7 +43,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-wrap gap-3 mt-3">
               <a 
                 href="#contact" 
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium hover:opacity-95 transition-opacity shadow-lg shadow-primary/20 text-sm sm:text-base"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium hover:opacity-95 transition-opacity shadow-lg shadow-primary/20 text-sm sm:text-base animate-pop"
               >
                 Hire Me
               </a>
@@ -67,8 +72,10 @@ const Hero: React.FC = () => {
         {/* Right Visuals - desktop and tablet */}
         <div className="hidden lg:block relative h-[560px] w-full">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            {/* Main Gradient Orb */}
-            <div className="w-80 h-80 rounded-full bg-gradient-to-tr from-primary via-accent to-pink opacity-30 blur-3xl animate-float" />
+            {/* Main Animated Orb */}
+            <div className="w-80 h-80 opacity-90 blur-2xl">
+              <AnimatedOrb className="w-80 h-80" />
+            </div>
             
             {/* Floating Cards */}
             <div className="absolute top-1/4 right-10 p-4 glass-card rounded-2xl animate-float" style={{ animationDelay: '1s' }}>
@@ -105,7 +112,9 @@ const Hero: React.FC = () => {
 
         {/* Simplified Visuals for small screens */}
         <div className="lg:hidden mt-6 w-full flex items-center justify-center">
-          <div className="w-56 h-56 rounded-full bg-gradient-to-tr from-primary via-accent to-pink opacity-20 blur-2xl animate-float" aria-hidden />
+          <div className="w-44 h-44 opacity-80">
+            <AnimatedOrb className="w-44 h-44" />
+          </div>
         </div>
       </div>
     </section>
