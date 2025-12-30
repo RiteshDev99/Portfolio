@@ -4,71 +4,71 @@ import { Reveal } from './ui/Reveal';
 
 const Hero: React.FC = () => {
   return (
-    <section id="about" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="about" className="relative min-h-[80vh] md:min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 bg-[length:400%_400%] animate-gradient-slow -z-20" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 bg-[length:400%_400%] animate-gradient-slow -z-20" />
 
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse-slow" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/20 rounded-full blur-[100px] -z-10" />
+      <div aria-hidden className="absolute top-0 right-0 w-[420px] h-[420px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse-slow opacity-80 hidden md:block" />
+      <div aria-hidden className="absolute bottom-0 left-0 w-[320px] h-[320px] bg-accent/20 rounded-full blur-[100px] -z-10 opacity-90 hidden md:block" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left Content */}
-        <div className="flex flex-col gap-6 relative z-10">
+        <div className="flex flex-col gap-4 relative z-10">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-primary font-mono mb-2">
               <span>Full-Stack Developer & Product Builder</span>
             </div>
           </Reveal>
           
-          <Reveal delay={0.1}>
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+          <Reveal delay={0.08}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
               I Build Software <br />
               That <span className="text-gradient">Thinks.</span>
             </h1>
           </Reveal>
           
-          <Reveal delay={0.2}>
-            <p className="text-lg text-text-secondary max-w-lg leading-relaxed">
+          <Reveal delay={0.18}>
+            <p className="text-base md:text-lg text-text-secondary max-w-xl leading-relaxed">
               I design and develop intelligent, scalable digital products using modern web technologies and emerging AI systems.
             </p>
           </Reveal>
           
-          <Reveal delay={0.3}>
-            <div className="flex flex-wrap gap-4 mt-2">
+          <Reveal delay={0.28}>
+            <div className="flex flex-wrap gap-3 mt-3">
               <a 
                 href="#contact" 
-                className="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium hover:opacity-90 transition-opacity shadow-lg shadow-primary/25"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium hover:opacity-95 transition-opacity shadow-lg shadow-primary/20 text-sm sm:text-base"
               >
                 Hire Me
               </a>
               <a 
                 href="#projects" 
-                className="px-8 py-3.5 rounded-full bg-transparent border border-white/20 text-white font-medium hover:bg-white/5 transition-colors"
+                className="px-6 py-3 rounded-full bg-transparent border border-white/20 text-white font-medium hover:bg-white/5 transition-colors text-sm sm:text-base"
               >
                 View Projects
               </a>
             </div>
           </Reveal>
-          
-          {/*<Reveal delay={0.4}>*/}
-          {/*  <div className="flex items-center gap-4 mt-8 pt-8 border-t border-white/5">*/}
-          {/*    <span className="text-sm text-text-secondary">Collaborated with:</span>*/}
-          {/*    <div className="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">*/}
-          {/*      /!* Tech Logos Placeholders *!/*/}
-          {/*      <div className="font-bold text-white text-lg">Next.js</div>*/}
-          {/*      <div className="font-bold text-white text-lg">Stripe</div>*/}
-          {/*      <div className="font-bold text-white text-lg">OpenAI</div>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</Reveal>*/}
+
+          <Reveal delay={0.4}>
+            <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white/5">
+              <div className="text-sm text-text-secondary">Tech highlights:</div>
+              <div className="flex gap-3 text-xs text-text-secondary">
+                <span className="px-2 py-1 bg-white/5 rounded">React</span>
+                <span className="px-2 py-1 bg-white/5 rounded">AI</span>
+                <span className="px-2 py-1 bg-white/5 rounded">Node</span>
+                <span className="px-2 py-1 bg-white/5 rounded">Tailwind</span>
+              </div>
+            </div>
+          </Reveal>
         </div>
 
-        {/* Right Visuals */}
-        <div className="hidden lg:block relative h-[600px] w-full">
-          <div className="absolute inset-0 flex items-center justify-center">
+        {/* Right Visuals - desktop and tablet */}
+        <div className="hidden lg:block relative h-[560px] w-full">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {/* Main Gradient Orb */}
-            <div className="w-80 h-80 rounded-full bg-gradient-to-tr from-primary via-accent to-pink opacity-20 blur-3xl animate-float" />
+            <div className="w-80 h-80 rounded-full bg-gradient-to-tr from-primary via-accent to-pink opacity-30 blur-3xl animate-float" />
             
             {/* Floating Cards */}
             <div className="absolute top-1/4 right-10 p-4 glass-card rounded-2xl animate-float" style={{ animationDelay: '1s' }}>
@@ -101,6 +101,11 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Simplified Visuals for small screens */}
+        <div className="lg:hidden mt-6 w-full flex items-center justify-center">
+          <div className="w-56 h-56 rounded-full bg-gradient-to-tr from-primary via-accent to-pink opacity-20 blur-2xl animate-float" aria-hidden />
         </div>
       </div>
     </section>

@@ -49,8 +49,10 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2 rounded-lg hover:bg-white/5 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-label="Toggle navigation"
         >
           {isOpen ? <X /> : <Menu />}
         </button>
@@ -58,12 +60,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-border p-6 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-border p-4 flex flex-col space-y-3 animate-slide-down">
           {NAV_LINKS.map((link) => (
             <a 
               key={link.label}
               href={link.href}
-              className="text-lg text-text-secondary hover:text-white"
+              className="text-lg text-text-secondary hover:text-white px-3 py-2 rounded-lg"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

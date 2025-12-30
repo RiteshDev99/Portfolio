@@ -22,7 +22,7 @@ export const Reveal: React.FC<RevealProps> = ({
         setIsVisible(true);
         observer.disconnect();
       }
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12 });
 
     if (ref.current) {
       observer.observe(ref.current);
@@ -31,25 +31,33 @@ export const Reveal: React.FC<RevealProps> = ({
     return () => observer.disconnect();
   }, []);
 
+  // Respect user preference for reduced motion
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const getTransform = () => {
-    if (!isVisible) {
-      switch(direction) {
-        case "up": return "translateY(50px)";
-        case "left": return "translateX(-50px)";
-        case "right": return "translateX(50px)";
-        default: return "none";
-      }
+    if (isVisible || prefersReducedMotion) return 'translate(0,0)';
+
+    // Use smaller offsets on narrow viewports for a gentler effect
+    const isNarrow = typeof window !== 'undefined' && window.innerWidth < 640;
+    const offset = isNarrow ? 28 : 50;
+
+    switch(direction) {
+      case "up": return `translateY(${offset}px)`;
+      case "left": return `translateX(-${offset}px)`;
+      case "right": return `translateX(${offset}px)`;
+      default: return 'none';
     }
-    return "translate(0,0)";
   };
 
+  const cssWidth = width === '100%' ? '100%' : 'fit-content';
+
   return (
-    <div ref={ref} style={{ width, position: 'relative', overflow: 'visible' }}>
+    <div ref={ref} style={{ width: cssWidth, position: 'relative', overflow: 'visible' }}>
       <div
         style={{
           transform: getTransform(),
-          opacity: isVisible ? 1 : 0,
-          transition: `all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`
+          opacity: isVisible || prefersReducedMotion ? 1 : 0,
+          transition: prefersReducedMotion ? 'none' : `all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`
         }}
       >
         {children}
